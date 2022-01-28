@@ -15,7 +15,7 @@ data class Todo(
     @ColumnInfo
     val details: String? = null,
     @ColumnInfo
-    val data: Date? = null,
+    val date: Date? = null,
     @ColumnInfo
     val is_done: Boolean? = false
 )

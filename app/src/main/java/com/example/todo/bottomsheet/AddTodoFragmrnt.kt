@@ -20,6 +20,8 @@ class AddTodoFragmrnt : BottomSheetDialogFragment() {
     lateinit var enter_your_details: TextInputLayout
     lateinit var select_date: TextView
     lateinit var add_task: Button
+
+    var on_todo_added : OnTodoAdded?=null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,21 +51,23 @@ class AddTodoFragmrnt : BottomSheetDialogFragment() {
                 val title_input_layout = enter_your_task.editText?.text.toString()
                 val details_input_layout = enter_your_details.editText?.text.toString()
                 //function bta5od el title w details
-                inserTodoInDateBase(title_input_layout, details_input_layout)
+                insertTodoInDateBase(title_input_layout, details_input_layout)
             }
         }
     }
 
-    private fun inserTodoInDateBase(titleInputLayout: String, detailsInputLayout: String) {
+    private fun insertTodoInDateBase(titleInputLayout: String, detailsInputLayout: String) {
         //5adt el data bta3t el todo
         val add_task = Todo(
             name = titleInputLayout,
             details = detailsInputLayout,
-            data = calender.time
+            date = calender.clearTime().time
         )
         //harw7 adefa fe database
         DataBase.getInstance(requireContext().applicationContext).todoDao().insertTodo(add_task)
         Toast.makeText(requireContext(), "task was added successfully! ", Toast.LENGTH_SHORT).show()
+        //call back to activity to notify insertion
+        on_todo_added?.onAdded()
         dismiss()
     }
 
@@ -88,6 +92,7 @@ class AddTodoFragmrnt : BottomSheetDialogFragment() {
     }
 
     val calender = Calendar.getInstance()
+
     private fun showDatePicker() {
         val date_picker = DatePickerDialog(
             requireContext(),
@@ -121,4 +126,8 @@ class AddTodoFragmrnt : BottomSheetDialogFragment() {
         add_task = requireView().findViewById(R.id.add_task_button)
     }
 
+
+    interface OnTodoAdded{
+        fun onAdded()
+    }
 }

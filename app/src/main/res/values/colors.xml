@@ -7,4 +7,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="gray">#707070</color>
+    <color name="color_transparent">#00000000</color>
+    <color name="gray_dark">#333232</color>
+    <color name="main_actvity_backgrounf">#DCEDC8</color>
 </resources>
