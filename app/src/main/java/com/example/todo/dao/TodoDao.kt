@@ -17,8 +17,8 @@ interface TodoDao {
     fun deleteTodo(todo: Todo)
 
     @Query("select * from Todo")
-    fun getAllTodo(): List<Todo>
+    fun getAllTodo(): MutableList<Todo>
 
     @Query("select * from Todo where date = :date ")
-    fun getTodoByDate(date : Date) : List<Todo>
+    fun getTodoByDate(date : Date) : MutableList<Todo>
 }

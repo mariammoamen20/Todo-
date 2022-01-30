@@ -9,7 +9,7 @@ import com.example.todo.DateConverter
 import com.example.todo.dao.TodoDao
 import com.example.todo.model.Todo
 
-@Database(entities = [Todo::class], version = 1)     //3-> DataBase
+@Database(entities = [Todo::class], version = 2)     //3-> DataBase
 @TypeConverters(DateConverter::class)
 abstract class DataBase : RoomDatabase() {
     abstract fun todoDao(): TodoDao

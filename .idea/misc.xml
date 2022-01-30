@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/drawable-anydpi/ic_delete.xml" value="0.1" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/drawable-anydpi/ic_settings.xml" value="0.1" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/drawable/rounded_image.xml" value="0.111" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/font/font.xml" value="0.1" />
@@ -11,7 +12,7 @@
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/layout/add_todo_fragment.xml" value="0.22" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/layout/fragment_list.xml" value="0.33" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/layout/fragment_settings.xml" value="0.1675929884566054" />
-        <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/layout/todo_item.xml" value="0.1" />
+        <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/layout/todo_item.xml" value="0.2" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/menu/bottom_navigation.xml" value="0.33" />
         <entry key="..\:/Route/Android/my_projcts/Todo/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.18" />
       </map>

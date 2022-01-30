@@ -1,70 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<com.zerobranch.layout.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swip_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="15dp"
-    app:contentPadding="10dp">
+    app:draggedItem="@id/todo_card_view"
+    app:rightItem="@id/right_view"
+    app:swipeDirection="left">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="3dp"
-            android:layout_height="80dp"
-            android:background="@color/blue"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/todo_title"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/blue"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/todo_details"
-            app:layout_constraintEnd_toStartOf="@id/mark_as_done_btn"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@id/view"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            tools:text="Play Basketball" />
-
-        <TextView
-            android:id="@+id/todo_details"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="10dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:fontFamily="@font/poppins_regular"
-            android:textColor="@color/gray_dark"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/mark_as_done_btn"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@id/view"
-            app:layout_constraintTop_toBottomOf="@+id/todo_title"
-            tools:text="Play Basketball" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical">
 
         <ImageView
-            android:id="@+id/mark_as_done_btn"
-            android:layout_width="wrap_content"
+            android:id="@+id/right_view"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_image"
-            android:paddingHorizontal="25dp"
-            android:paddingVertical="9dp"
-            android:src="@drawable/icon_check"
+            android:src="@drawable/ic_delete"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete"
+            android:textColor="@color/red"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/right_view"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/todo_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="10dp"
+        app:contentPadding="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="3dp"
+                android:layout_height="80dp"
+                android:background="@color/blue"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/todo_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/view"
+
+                app:layout_constraintBottom_toTopOf="@+id/todo_details"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Play Basketball" />
+
+            <TextView
+                android:id="@+id/todo_details"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_regular"
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/gray_dark"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@id/view"
+                app:layout_constraintBottom_toTopOf="@+id/mark_as_done_btn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/todo_title"
+                tools:text="Play Basketball" />
+
+            <ImageView
+                android:id="@+id/mark_as_done_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_image"
+                android:paddingHorizontal="25dp"
+                android:layout_marginStart="15dp"
+                android:paddingVertical="9dp"
+                android:layout_marginTop="15dp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/icon_check"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/todo_details"
+
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</com.zerobranch.layout.SwipeLayout>
